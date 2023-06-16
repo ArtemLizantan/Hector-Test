@@ -69,3 +69,4 @@ isWebp()
 import headerMenu from "./modules/header/header-menu.js"
 import burger from "./modules/header/burger.js"
 import swiperHero from "./libs/swiper.js"
+import productMix from "./libs/mixitup.js"

@@ -1,7 +1,6 @@
-[class^="icon-"]::before,
-[class*=" icon-"]::before {
+[class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: "icomoon" !important;
+  font-family: 'icomoon' !important;
   speak: never;
   font-style: normal;
   font-weight: normal;
@@ -33,26 +32,29 @@
   content: "\e905";
 }
 .icon-mail:before {
-  content: "\e907";
+  content: "\e906";
 }
 .icon-phone:before {
-  content: "\e908";
+  content: "\e907";
 }
 .icon-search:before {
-  content: "\e909";
+  content: "\e908";
 }
 .icon-star:before {
-  content: "\e90a";
+  content: "\e909";
 }
 .icon-telegram:before {
-  content: "\e90b";
+  content: "\e90a";
 }
 .icon-user:before {
-  content: "\e90c";
+  content: "\e90b";
 }
 .icon-viber:before {
-  content: "\e90d";
+  content: "\e90c";
 }
 .icon-whatsup:before {
+  content: "\e90d";
+}
+.icon-full-star:before {
   content: "\e90e";
 }

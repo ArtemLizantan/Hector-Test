@@ -18,11 +18,6 @@
     }
   }
 
-  // .footer__body
-
-  &__body {
-  }
-
   //foote-link
   &__link {
     @media (max-width: 1430px) {
@@ -181,11 +176,6 @@
     }
   }
 
-  // .footer__list-social
-
-  &__list-social {
-  }
-
   // .footer__link-social
 
   &__link-social {
@@ -243,7 +233,7 @@
 
   // .copyright__politics
 
-  &__politics{
+  &__politics {
     @media (max-width: $md4+px) {
       display: flex;
       flex-direction: column;
@@ -262,7 +252,7 @@
     color: rgba(255, 255, 255, 0.25);
   }
 
-  &__title{
+  &__title {
     @media (max-width: $md4+px) {
       text-align: center;
     }

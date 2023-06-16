@@ -1,16 +1,7 @@
 .stock {
   background: #f5f5f5;
   padding: 32px 0;
-
-  // .stock__container
-
-  &__container {
-  }
-
-  // .stock__body
-
-  &__body {
-  }
+  margin-bottom: 75px;
 
   // .stock__cards
 
@@ -46,7 +37,7 @@
       padding: 20px 0;
     }
     @media (max-width: $md4+px) {
-        padding: 40px 0;
+      padding: 40px 0;
     }
   }
 
@@ -92,8 +83,8 @@
     letter-spacing: 0.07em;
     color: #0f0f0f;
     @media (max-width: $md2+px) {
-       max-width: 400px;
-       text-align: center;
-      }
+      max-width: 400px;
+      text-align: center;
+    }
   }
 }
