@@ -145,6 +145,16 @@
     }
   }
 
+  
+  // .header__logo
+
+  &__logo{
+    @media (max-width: $md3+px) {
+      width: 80px;
+      height: 80px;
+    }
+  }
+
   // .header__list-button
 
   &__list-button {
