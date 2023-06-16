@@ -1,5 +1,9 @@
 .header {
-  position: relative;
+  position: absolute;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  background: transparent;
   min-height: 152px;
   display: flex;
   width: 100%;
