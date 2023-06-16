@@ -66,5 +66,5 @@ isWebp()
 // togglePopupWindows()
 // =======================================================================================================
 
-
-import burger from "./modules/burger.js"
+import headerMenu from "./modules/header/header-menu.js"
+import burger from "./modules/header/burger.js"

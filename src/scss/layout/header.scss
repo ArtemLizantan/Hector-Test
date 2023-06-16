@@ -1,29 +1,331 @@
-// =====================================================================================================================
 .header {
+  position: relative;
+  min-height: 152px;
+  display: flex;
   width: 100%;
-  &.sticky {
-    // ..стили для липкого хедера
+  justify-content: space-between;
+  align-items: center;
+
+  @media (max-width: $md2+px) {
+    @include adaptiv-value(min-height, 152, 80, 3);
   }
   // .header__container
+
   &__container {
-    height: rem($headerHeight);
+    width: 100%;
+  }
+
+  // .header__body
+
+  &__body {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+  }
+
+  // .header__navigation
+
+  &__navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    @media (max-width: $md2+px) {
+      z-index: 20;
+      opacity: 0;
+      position: fixed;
+      left: -100%;
+      pointer-events: none;
+      overflow: hidden;
+      top: 0;
+      left: -100%;
+      width: 50%;
+      height: 100%;
+      background-color: #fff;
+      visibility: hidden;
+      flex-direction: column;
+      justify-content: center;
+      gap: 80px;
+      transition: all 0.5s;
+      @media (max-width: $md3+px) {
+        width: 100%;
+      }
+      &._active {
+        left: 0;
+        opacity: 1;
+        pointer-events: unset;
+        overflow: visible;
+        visibility: visible;
+      }
+    }
+  }
+
+  // .header__list
+
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 26px;
+    &--links {
+      @media (max-width: 1700px) {
+        flex-grow: 1;
+        justify-content: space-between;
+        @include adaptiv-value(padding-right, 50, 0, 3);
+        gap: unset;
+      }
+      @media (max-width: $md2+px) {
+        padding-right: unset;
+        flex-direction: column;
+        flex-grow: unset;
+        width: 100%;
+      }
+    }
+    &--buttons {
+      gap: 73px;
+      @media (max-width: 1300px) {
+        @include adaptiv-value(gap, 73, 0, 3);
+      }
+      @media (max-width: $md3+px) {
+        width: 50%;
+      }
+    }
+  }
+
+  // .header__list-item
+
+  &__list-item {
+    @media (max-width: $md2+px) {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  // .header__link
+
+  &__link {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0.07em;
+    color: #0f0f0f;
+    &--catalog {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      gap: 5px;
+      background: unset;
+      &::before {
+        font-size: 7px;
+      }
+    }
+    @media (max-width: $md2+px) {
+      font-size: 18px;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      justify-content: center;
+      border-bottom: 1px solid #878787;
+    }
+  }
+
+  // .header__logo-link
+
+  &__logo-link {
+    position: absolute;
+    left: 50.2%;
+    top: 56%;
+    transform: translate(-50%, -50%);
+    @media (max-width: 1700px) {
+      top: 120%;
+    }
+    @media (max-width: $md2+px) {
+      position: static;
+      transform: unset;
+    }
+  }
+
+  // .header__list-button
+
+  &__list-button {
+    background: unset;
+    position: relative;
+    bottom: 5px;
+    &::before {
+      color: #0f0f0f;
+      font-size: 25px;
+    }
   }
 }
+
+.menu {
+  position: fixed;
+  overflow: hidden;
+  visibility: hidden;
+  pointer-events: none;
+  left: -100%;
+  transition: all 0.4s ease;
+  &._open {
+    overflow: visible;
+    visibility: visible;
+    pointer-events: unset;
+    left: 0;
+    background: #ffffff;
+    z-index: 30;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    @media (max-width: $md2+px) {
+      overflow-y: scroll;
+    }
+  }
+
+  // .menu__button-close
+
+  &__button-close {
+    background: #0f0f0f;
+    opacity: 0.5;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 0.07em;
+    color: #ffffff;
+    padding: 47px 36px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 17px;
+    margin-left: 50px;
+    &::before {
+      font-size: 12px;
+    }
+    @media (max-width: $md2+px) {
+      padding: 30px;
+    }
+    @media (max-width: $md4+px) {
+      padding: 20px;
+      font-size: 15px;
+      &::before {
+        font-size: 8px;
+      }
+    }
+  }
+
+  // .menu__links
+
+  &__links {
+    margin-top: 48px;
+    display: flex;
+    gap: 40px;
+    border-bottom: 1px solid #878787;
+    padding-bottom: 40px;
+    @media (max-width: $md3+px) {
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+
+  // .menu__link
+
+  &__link {
+    @extend %button-menu;
+  }
+
+  // .menu__column
+
+  &__column {
+    @media (max-width: $md2+px) {
+      width: 100%;
+      border-bottom: 1px solid #878787;
+      padding-bottom: 20px;
+    }
+  }
+
+  // .menu__columns
+
+  &__columns {
+    display: flex;
+    align-items: center;
+    gap: 133px;
+    margin-top: 30.5px;
+    @media (max-width: $md2+px) {
+      flex-direction: column;
+      @include adaptiv-value(gap, 70, 20, 3);
+    }
+  }
+
+  // .menu__column-tite
+
+  &__column-tite {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    color: #000000;
+  }
+
+  // .menu__column-items
+
+  &__column-items {
+    margin-top: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  // .menu__column-link
+
+  &__column-link {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: #666666;
+    transition: all 0.2s;
+    @media (min-width: $md2+px) {
+      &:hover {
+        color: #000000;
+        font-weight: 700;
+      }
+    }
+    @media (max-width: $md2+px) {
+      display: block;
+      width: 100%;
+      height: 30px;
+    }
+  }
+  &__pre-scrin {
+    opacity: 0;
+    z-index: 1;
+    visibility: hidden;
+    display: block;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition: opacity 0.25s, visibility 0s linear 0.25s;
+    background-color: hsla(0deg, 0%, 7%, 0.36);
+    backdrop-filter: blur(4px);
+    &._active {
+      opacity: 1;
+      visibility: visible;
+      transition: opacity 0.8s ease, visibility 0s;
+    }
+  }
+}
+
 // =====================================================================================================================
 
 // Burger
-/*
 .icon-menu {
   display: none;
-  @include media(767) {
+  @include media(991) {
     display: block;
     position: relative;
     width: rem(30);
     height: rem(18);
     cursor: pointer;
-    z-index: 5;
+    z-index: 25;
     span,
     &::before,
     &::after {
@@ -44,7 +346,7 @@
     span {
       top: calc(50% - rem(1));
     }
-    .menu-open & {
+    &._active {
       span {
         width: 0;
       }
@@ -59,4 +361,3 @@
     }
   }
 }
-*/
